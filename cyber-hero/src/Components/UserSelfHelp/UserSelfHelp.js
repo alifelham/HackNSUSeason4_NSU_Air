@@ -1,8 +1,8 @@
-import './MakeComplaint.css';
+import './UserSelfHelp.css';
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom'
 
-class MakeComplaint extends Component {
+class UserSelfHelp extends Component {
     constructor(props) {
         super(props);
     }
@@ -40,24 +40,29 @@ class MakeComplaint extends Component {
                      
                             <div className="profile-info">
                                
-                            <h1>File Complaint:</h1>
+                            <h1>Reporting abuse and safety resources:</h1>
                             <div className="input-group-prepend">
-                            <p>Briefly tell us about your complain:</p>
-                                <span className="input-group-text"><i className="fa fa-user"></i></span>
-                            </div>
-                            <input name="text" type="text" className="form-control" placeholder="I am facing.."   />
-                            <button className="reqbutton"><a onClick={this.props.onLogout}>SEND</a></button>
-                            <p>Our experts will contact you soon for a detailed report!</p>
+                            <div className='btns'>
+                                    <div>
+                                        <button className="assigned-button"><a href = 'https://www.facebook.com/help/181495968648557'>Facebook</a></button>
+                                        <button className="assigned-button"><a href = 'https://www.facebook.com/help/181495968648557'>Twitter</a></button>
+                                        <button className="assigned-button"><a href = 'https://www.facebook.com/help/181495968648557'>Instagram</a></button>
+                                        <button className="assigned-button"><a href = 'https://www.facebook.com/help/181495968648557'>YouTube</a></button>
+                                        <button className="assigned-button"><a href = 'https://www.facebook.com/help/181495968648557'>WhatsApp</a></button>
+                                    </div>
+                                </div>
+
                             </div>
                     </div>
 
 
                 </div>
+                </div>
     );
     }
 }
 
-export default MakeComplaint;
+export default UserSelfHelp;
 
 
 

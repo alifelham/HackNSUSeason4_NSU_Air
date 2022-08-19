@@ -23,6 +23,7 @@ class Profile extends Component {
                         <ul>
                             <li class="box"><a href="/emergency">Home</a></li>
                             <li class="box"><a href="/counsel">Counselling</a></li>
+                            <li class="box"><a href="/usersession">Session</a></li>
                             <li class="box"><a href="/complain">Complain</a></li>
                             <li class="box"><a href="/userprofile">Profile</a></li>
                             <li class="box"><a href="/selfhelp">Self Help</a></li>

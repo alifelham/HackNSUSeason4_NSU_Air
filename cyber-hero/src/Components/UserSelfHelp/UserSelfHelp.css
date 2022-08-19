@@ -3,6 +3,7 @@
     max-width: 600px;
     
     margin: auto;
+    height: 500px;
 
 }
 
@@ -14,7 +15,7 @@
   box-sizing: border-box; 
   text-align: center;
   padding: 40px;
-  height: 400px;
+  height: 650px;
 }
 
 @media (max-width: 800px) {
@@ -247,8 +248,8 @@ nav ul li a:hover{
     background-image: url('../images/bg.png');
     color: white;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    width: 94%;
+    height: 750px;
   
   }
   
@@ -465,4 +466,39 @@ nav ul li a:hover{
 .dropdown:hover .dropbtn {
   background-color:		#CD5C5C;
   border-radius: 2em;
+}
+
+.form-control{
+  width: 200px;
+  height: 200px;
+}
+
+.input-group-prepend p{
+  color:black;
+}
+
+.input-group-prepend{
+  padding-left: 20px;
+}
+
+.reqbutton{
+  background-color: #CD5C5C;
+  border: 1.5px solid  #CD5C5C;
+  border-radius: 2em;
+  padding: 0.6rem 0.8rem;
+  margin-left: 2vw;
+  font-size: 1rem;
+  cursor: pointer;
+  color: white;
+
+}
+.reqbutton:hover {
+  color: black;
+  background-color:  #CD5C5C;
+  border:1.5px solid  #CD5C5C;
+  transition: all ease-in-out 350ms;
+}
+
+.profile-info p{
+  color: black;
 }

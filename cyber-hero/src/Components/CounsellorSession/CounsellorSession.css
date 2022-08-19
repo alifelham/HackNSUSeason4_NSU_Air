@@ -1,26 +1,48 @@
+.h
+
 .profile-container {
-    padding-top: 60px;
-    max-width: 600px;
-    
+    padding-top: 120px;
     margin: auto;
+    max-width: 700px;
+    padding-bottom: 20px;
+    min-height: 200px;
 
 }
 
-.profile-info {
+
+.profile-container h1{
+    color: black;
+}
+.profile-info1 {
   box-shadow: 22px 25px rgb(154, 152, 152, 0.5);
   margin-top: 10px;
   background-color: #fcd89e;
   border-radius: 30px;
+  padding: 30px;
   box-sizing: border-box; 
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 40px;
   text-align: center;
-  padding: 40px;
-  height: 400px;
+  color: black;
+}
+
+.profile-name{
+    width: 80%;
+}
+
+.btns{
+    margin: auto;
+    width: 2%;
+}
+
+.btns a{
+    color: #f2f5f7;
 }
 
 @media (max-width: 800px) {
   .profile-info {
     flex-direction: column;
-    
   }
 }
 
@@ -28,7 +50,10 @@
   background-color: #ffdfa8;
 }
 
-
+.profile-info .profile-avatar img {
+    border-radius: 50%;
+    max-width: 250px;
+}
 
 .profile-info .profile-name {
     font-weight: 500;
@@ -39,12 +64,8 @@
 .profile-name p{
   text-align: left;
   font-size: 17px;
-  width: 100%;
+}
 
-}
-.profile-name {
-  width: 100%;
-}
 .profile-info h1{
   color: rgb(89, 89, 89);
   padding-bottom: 10px;
@@ -93,7 +114,7 @@
   
   /* responsive nav bar*/
   nav{
-    width:96%;
+    width:100%;
     background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
     box-sizing:border-box;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
@@ -217,6 +238,7 @@ nav ul li a:hover{
     }
     
     nav{
+      display:none;
       padding:0;
     }
     
@@ -243,12 +265,14 @@ nav ul li a:hover{
     }
   }
   
+
+
   .bg {
     background-image: url('../images/bg.png');
     color: white;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 1200px;
   
   }
   
@@ -465,4 +489,28 @@ nav ul li a:hover{
 .dropdown:hover .dropbtn {
   background-color:		#CD5C5C;
   border-radius: 2em;
+}
+
+
+
+.cancel-button{
+    background-color:   #CD5C5C;
+    border: 1.5px solid  #CD5C5C;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    margin-left: 2vw;
+    font-size: 1rem;
+    cursor: pointer;
+
+}
+
+.assigned-button{
+    background-color:   #60c81f;
+    border: 1.5px solid  #60c81f;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    margin-left: 2vw;
+    font-size: 1rem;
+    cursor: pointer;
+
 }

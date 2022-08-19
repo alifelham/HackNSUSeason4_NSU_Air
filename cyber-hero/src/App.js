@@ -13,6 +13,11 @@ import SecurityProfile from './Components/Securityprofile/SecurityProfile';
 import CounsellingRequest from './Components/CounsellingRequest/CounsellingRequest';
 import EmergencyReq from './Components/EmergencyReq/EmergencyReq';
 import MakeComplaint from './Components/MakeComplaint/MakeComplaint';
+import CounsellorSession from './Components/CounsellorSession/CounsellorSession';
+import CounsellorSessionReq from './Components/CounsellorSessionReq/CounsellorSessionReq';
+import UserSession from './Components/UserSessions/UserSession';
+import UserSelfHelp from './Components/UserSelfHelp/UserSelfHelp';
+
 
 class App extends Component {
   constructor(props) {
@@ -74,6 +79,10 @@ class App extends Component {
           <Route path = '/counsel' element={<CounsellingRequest/>}></Route>
           <Route path = '/emergency' element={<EmergencyReq/>}></Route>
           <Route path = '/complain' element={<MakeComplaint/>}></Route>
+          <Route path = '/counsellorsession' element={<CounsellorSession/>}></Route>
+          <Route path = '/counsellorsessionreq' element={<CounsellorSessionReq/>}></Route>
+          <Route path = '/usersession' element={<UserSession/>}></Route>
+          <Route path = '/selfhelp' element={<UserSelfHelp/>}></Route>
         </Routes>
         </div>
       );

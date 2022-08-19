@@ -19,14 +19,14 @@ public class userService {
     public user saveUser(user user) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
 
-        ApiFuture<WriteResult> collectionApiFuture = dbFirestore.collection("Users").document(user.getId().toString()).set(user);
+        ApiFuture<WriteResult> collectionApiFuture = dbFirestore.collection("users").document(user.getId().toString()).set(user);
 
         return user;
     }
 
     public user getUserByID(String id) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
-        DocumentReference docRef = dbFirestore.collection("Users").document(id);
+        DocumentReference docRef = dbFirestore.collection("users").document(id);
 
         ApiFuture<DocumentSnapshot> future = docRef.get();
 
@@ -44,10 +44,8 @@ public class userService {
     public List<user> getAllUsers() throws ExecutionException, InterruptedException {
 
         Firestore dbFirestore = FirestoreClient.getFirestore();
-
-
-
-        Iterable<DocumentReference>documentReferences = dbFirestore.collection("Users").listDocuments();
+        
+        Iterable<DocumentReference>documentReferences = dbFirestore.collection("users").listDocuments();
         Iterator<DocumentReference> iterator = documentReferences.iterator();
 
         List<user> userList = new ArrayList<>();
@@ -66,6 +64,4 @@ public class userService {
 
         return userList;
     }
-
-
 }

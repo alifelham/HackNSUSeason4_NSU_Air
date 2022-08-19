@@ -14,17 +14,17 @@ public class userController {
     @Autowired
     userService userService;
 
-    @PostMapping("/saveUser")
+    @PostMapping("/saveuser")
     public user saveUser(@RequestBody user user) throws ExecutionException, InterruptedException {
         return userService.saveUser(user);
     }
 
-    @GetMapping("/getUserByID/{id}")
+    @GetMapping("/getuserByID/{id}")
     public user getUserById(@PathVariable String id) throws ExecutionException, InterruptedException {
         return userService.getUserByID(id);
     }
 
-    @GetMapping("/getAllUsers")
+    @GetMapping("/getAllusers")
     public List<user> getAllUsers() throws ExecutionException, InterruptedException {
         return userService.getAllUsers();
     }

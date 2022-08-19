@@ -1,15 +1,15 @@
 package com.example.HackNSU.model;
 
 public class user {
-    String name;
-    String address;
-    String contact;
-    String email;
-    String id;
-    String type;
-    String password;
-    String cPass;
-    String age;
+    private String name;
+    private String address;
+    private String contact;
+    private String email;
+    private String id;
+    private String type;
+    private String password;
+    private String cPass;
+    private String age;
 
     public user(String name, String address, String contact, String email, String id, String type, String password, String cPass, String age) {
         this.name = name;

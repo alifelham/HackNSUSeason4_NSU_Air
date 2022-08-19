@@ -7,15 +7,15 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom'
 //import axios from 'axios';
 
-var appointments =  [1,2,3,4]
+var appointments =  [1,2]
 class UserSession extends Component {
-    //constructor(props){
-    //    super(props)
-    //}
+    constructor(props){
+        super(props)
+    }
 
-    //state={
-    //    appointments: []
-   // }
+    state={
+        session: []
+    }
 
    // handleCancel=(id)=>{
    //     axios.delete(`http://localhost:8080/appointment/deleteAppointmentByAID/${id}`, {
@@ -82,13 +82,10 @@ class UserSession extends Component {
                     {appointments.map(appointment => {
                         return (
                             <div className="profile-info1">
-
-                                <div className="profile-name">
-                                    <p> Meet Link: &emsp; {appointment.pid}</p>
-                                </div>
+                                <p>Click to join the session: </p>
 
                                 <div className='btns'>
-                                    <div><button className="assigned-button"><a>Join</a></button></div>
+                                    <div><button className="assigned-button"><a href='https://meet.google.com/pav-dezq-nam'>Join</a></button></div>
                                 </div>
                             </div>)
                     }) }

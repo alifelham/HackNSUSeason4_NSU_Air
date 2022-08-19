@@ -4,11 +4,55 @@ import './CounsellorSession.css';
 import React, { Component } from 'react';
 //import { GOOGLE_AUTH_URL, FACEBOOK_AUTH_URL, GITHUB_AUTH_URL, ACCESS_TOKEN, API_BASE_URL } from '../../constants';
 //import { login } from '../../util/APIUtils';
-import { Link, Redirect } from 'react-router-dom'
-//import axios from 'axios';
+import { Link, Navigate } from 'react-router-dom'
+import axios from 'axios';
 
-var appointments =  [1,2,3,4]
 class CounsellorSession extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state={
+            link: '',
+            id: ''
+        }
+
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleInputChange(event) {
+        const target = event.target;
+        const inputName = target.name;
+        const inputValue = target.value;
+
+        this.setState({
+            [inputName]: inputValue
+        });
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+
+     
+
+            axios.post(`http://localhost:8080/counselSession/saveCounselSession`, {
+                msg: this.state.msg,
+                id: '0',
+                name: 'Junayed'
+        
+
+        }).then(res => {
+            console.log(res);
+            return <Navigate
+                to={{
+                pathname: "",
+                state: { from: this.props.location }
+            }}/>; 
+        })
+    
+    }
+
+
     //constructor(props){
     //    super(props)
     //}
@@ -77,21 +121,21 @@ class CounsellorSession extends Component {
                     <div classN></div>
                     <h1>Counselling Sessions:</h1>
 
-                    {appointments.map(appointment => {
+                    
                         return (
                             <div className="profile-info1">
 
                                 <div className="profile-name">
-                                    <p> Time: &ensp; {appointment.aid}</p>
-                                    <p> Date: &ensp; {appointment.date}</p>
-                                    <p> Meet Link: &emsp; {appointment.pid}</p>
+                                    <p> Time: &ensp; </p>
+                                    <p> Date: &ensp; </p>
+                                    <p> Meet Link: &emsp; </p>
                                 </div>
 
                                 <div className='btns'>
                                     <div><button className="assigned-button"><a>Join</a></button></div>
                                 </div>
                             </div>)
-                    }) }
+                
                     </div>
             
 

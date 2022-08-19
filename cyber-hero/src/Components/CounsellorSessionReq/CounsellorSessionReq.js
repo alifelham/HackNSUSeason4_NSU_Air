@@ -4,11 +4,54 @@ import './CounsellorSessionReq.css';
 import React, { Component } from 'react';
 //import { GOOGLE_AUTH_URL, FACEBOOK_AUTH_URL, GITHUB_AUTH_URL, ACCESS_TOKEN, API_BASE_URL } from '../../constants';
 //import { login } from '../../util/APIUtils';
-import { Link, Redirect } from 'react-router-dom'
-//import axios from 'axios';
+import { Link, Navigate } from 'react-router-dom'
+import axios from 'axios';
 
 var appointments =  [1,2,3,4]
 class CounsellorSessionReq extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state={
+            link: '',
+            id: ''
+        }
+
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleInputChange(event) {
+        const target = event.target;
+        const inputName = target.name;
+        const inputValue = target.value;
+
+        this.setState({
+            [inputName]: inputValue
+        });
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+
+     
+
+            axios.post(`http://localhost:8080/counselSession/saveCounselSession`, {
+                link: this.state.link,
+                id: '0',
+                name: 'Junayed'
+        
+
+        }).then(res => {
+            console.log(res);
+            return <Navigate
+                to={{
+                pathname: "",
+                state: { from: this.props.location }
+            }}/>; 
+        })
+    
+    }
     //constructor(props){
     //    super(props)
     //}
@@ -77,9 +120,10 @@ class CounsellorSessionReq extends Component {
                     <div classN></div>
                     <h1>Counselling Requests:</h1>
 
-                    {appointments.map(appointment => {
+                    
                         return (
                             <div className="profile-info1">
+                                <form onSubmit={this.handleSubmit}>
 
                                 <div className="profile-name">
                                 <p> Meet Link: </p>
@@ -87,17 +131,18 @@ class CounsellorSessionReq extends Component {
                             <div className="input-group-prepend1">
                                 <span className="input-group-text1"><i className="fa fa-user"></i></span>
                             </div>
-                            <input name="link" type="link" className="form-control" placeholder="meet link"   />
+                            <input name="link" type="link" className="form-control" placeholder="meet link"  onChange={this.handleInputChange} />
+                                
                                 </div>
                                    
                                 </div>
-
+                                
                                 <div className='btns'>
-                                    <div><button className="cancel-button"><a onClick={()=>this.handleCancel(appointment.aid)}>Cancel</a></button></div>
-                                    <div><button className="assigned-button"><a>Assigned</a></button></div>
+                                    <div><button className="cancel-button"><a >Cancel</a></button></div>
+                                    <div><button type="submit" className="assigned-button"><a>Assigned</a></button></div>
                                 </div>
+                                </form>
                             </div>)
-                    }) }
                     </div>
             
 

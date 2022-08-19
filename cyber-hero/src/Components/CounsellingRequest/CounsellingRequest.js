@@ -1,11 +1,53 @@
 import './CounsellingRequest.css';
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
+import axios from 'axios';
 
 class CounsellingRequest extends Component {
     constructor(props) {
         super(props);
+
+        this.state={
+            msg: '',
+            id: ''
+        }
+
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    handleInputChange(event) {
+        const target = event.target;
+        const inputName = target.name;
+        const inputValue = target.value;
+
+        this.setState({
+            [inputName]: inputValue
+        });
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+
+     
+
+            axios.post(`http://localhost:8080/counselReqs/saveReq`, {
+                msg: this.state.msg,
+                id: '0',
+                name: 'Junayed'
+        
+
+        }).then(res => {
+            console.log(res);
+            return <Navigate
+                to={{
+                pathname: "",
+                state: { from: this.props.location }
+            }}/>; 
+        })
+    
+    }
+
 
     render() {
         return (
@@ -39,15 +81,18 @@ class CounsellingRequest extends Component {
                     <div className="profile-container">
                      
                             <div className="profile-info">
-                               
+
+                             <form onSubmit={this.handleSubmit}>
                             <h1>Request Counselling:</h1>
                             <div className="input-group-prepend">
                             <p>Briefly tell us about your concern (not mandatory):</p>
                                 <span className="input-group-text"><i className="fa fa-user"></i></span>
                             </div>
-                            <input name="text" type="text" className="form-control" placeholder="I am facing.."   />
-                            <button className="reqbutton"><a onClick={this.props.onLogout}>REQUEST</a></button>
+                            <input name="msg" type="text" className="form-control" placeholder="I am facing.." onChange={this.handleInputChange}  />
+                            <button className="reqbutton" type="submit">REQUEST</button>
+                            </form>
                             </div>
+                            
                     </div>
 
 

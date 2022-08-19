@@ -7,6 +7,8 @@ import {
 } from 'react-router-dom';
 import Login from './Components/Login/Login';
 import Signup from './Components/Signup/Signup';
+import NormalUserProfile from './Components/NormalUserProfile/NormalUserProfile';
+import CounsellorProfile from './Components/CounsellorProfile/CounsellorProfile';
 
 class App extends Component {
   constructor(props) {
@@ -62,6 +64,8 @@ class App extends Component {
         <Routes>
           <Route path = '/login' element={<Login/>}></Route>
           <Route path = '/signup' element={<Signup/>}></Route>
+          <Route path = '/userprofile' element={<NormalUserProfile/>}></Route>
+          <Route path = '/counprofile' element={<CounsellorProfile/>}></Route>
         </Routes>
         </div>
       );

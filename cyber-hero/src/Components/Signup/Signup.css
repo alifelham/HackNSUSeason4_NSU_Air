@@ -10,6 +10,9 @@
   
   }
   
+  .text-center{
+    padding-top:40px;
+  }
   .container1 {
     display: flex;
     align-items: center;
@@ -19,8 +22,8 @@
   }
   
   .form-box1 {
-    width: 400px;
-    height: 900px;
+    width: 550px;
+    height: 740px;
     background-color: black;
     display: flex;
     flex-direction: column;
@@ -28,7 +31,7 @@
     opacity: 0.6;
     border-radius: 2%;
     justify-content: center;
-    padding: 40px;
+    padding: 120px;
   
   }
   
@@ -108,3 +111,21 @@
    color: azure;
   }
   
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom:10px;
+  }
+  
+  
+  .selectUser {
+    position: relative;
+    padding: 10px;
+    border: none;
+    border-right: 10px solid #fff;
+    outline: none;
+    width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  }

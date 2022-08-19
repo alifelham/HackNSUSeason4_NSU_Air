@@ -54,10 +54,18 @@ class SignupForm extends Component {
             <div className='form-box1'>
 
                 <div className="header-form1">
-                    <h4 className="text-center"><i style={{ color: "white", fontSize: "35px" }}>LOG IN</i></h4>
+                    <h4 className="text-center"><i style={{ color: "white", fontSize: "35px" }}>SIGNUP</i></h4>
                 </div>
 
                 <div className="body-form">
+
+                <section>
+                    <select class="selectUser" onchange="changeUser(this)">
+                        <option value="User">Normal User</option>
+                        <option value="Counsellor">Counsellor</option>
+                        <option value="Security">Security</option>
+                    </select>
+                </section>
 
                     <form>
                         <div className="input-group mb-3">
@@ -118,15 +126,6 @@ class SignupForm extends Component {
 
                         <div className="SignupButton">
                             <button type="submit" className="btn btn-secondary btn-block">SIGN UP</button>
-                        </div>
-                        <div className="message">
-                            <div><input type="checkbox" /> Remember ME</div>
-                            <div><a href="#">Forgot Password</a></div>
-                        </div>
-                        <div className="social">
-                           
-                            {/* <a ><i className="fab fa-google"></i></a>
-                            <a ><i className="fab fa-facebook"></i></a> */}
                         </div>
                         <div className="SignupMessage">
                             <div><a href="/login">Already have an account? LOGIN</a></div>

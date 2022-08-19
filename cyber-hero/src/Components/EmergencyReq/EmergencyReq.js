@@ -1,8 +1,8 @@
-import './NormalUserProfile.css';
+import './EmergencyReq.css';
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom'
 
-class Profile extends Component {
+class EmergencyReq extends Component {
     constructor(props) {
         super(props);
     }
@@ -20,7 +20,7 @@ class Profile extends Component {
                 
              
                 <nav className="navb"><div className="main_list" id="mainListDiv">
-                        <ul>
+                <ul>
                             <li class="box"><a href="/emergency">Home</a></li>
                             <li class="box"><a href="/counsel">Counselling</a></li>
                             <li class="box"><a href="/complain">Complain</a></li>
@@ -36,18 +36,15 @@ class Profile extends Component {
                 </nav>
 
                     <div className="profile-container">
-                     <h1>User Information:</h1>
+                     
                             <div className="profile-info">
                                
-                 
-                                <div className="profile-name">
-                                    <p> Username: &ensp; {}</p>
-                                    <p> ID: &emsp; {}</p>
-                                    <p> Age: &emsp; {}</p>
-                                    <p > Email: &emsp; &emsp; &ensp; {}</p>
-                                    <p> Contact: &emsp; {}</p>
-                                    <p> Address:  &emsp; {/*this.props.currentUser.address*/}</p>
-                                </div>
+                            <h1>Emergency Help:</h1>
+                            <div className="input-group-prepend">
+                            <p>Press to get Emergency Help:</p>
+                                <span className="input-group-text"><i className="fa fa-user"></i></span>
+                            </div>
+                            <button className="reqbutton"><a onClick={this.props.onLogout}>REQUEST</a></button>
                             </div>
                     </div>
 
@@ -57,7 +54,7 @@ class Profile extends Component {
     }
 }
 
-export default Profile;
+export default EmergencyReq;
 
 
 
